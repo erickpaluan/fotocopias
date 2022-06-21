@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Controle de fotocópias</title>
+  </head>
+  <body>
+    <h2>Controle de fotocópias</h2>
+
+    <div class="container">
+      <h4>Saldo atual</h4>
+      
+      <h1 id="balance" class="balance">R$ 0.00</h1>
+
+      <div class="inc-exp-container">
+        <div>
+          <h4>Pagos</h4>
+          <p id="money-plus" class="money plus">+ R$0.00</p>
+        </div>
+
+        <div>
+          <h4>Devendo</h4>
+          <p id="money-minus" class="money minus">- R$0.00</p>
+        </div>
+      </div>
+
+      <h3>Histórico</h3>
+      
+      <ul id="transactions" class="transactions"></ul>
+
+      <h3>Adicionar transação</h3>
+      
+      <form id="form">
+        <div class="form-control">
+          <label for="text">Nome</label>
+          <input autofocus type="text" id="text" placeholder="Nome da pessoa" />
+        </div>
+
+        <div class="form-control">
+          <label for="course">Curso</label>
+          <select type="select" id="course">
+            <option value="Teologia">Teologia</option>
+            <option value="Filosofia">Filosofia</option>
+            <option value="Func-Prof">Funcionários / Professores</option>
+            <option value="CEARP">CEARP</option>
+          </select>
+        </div>
+
+        <div class="form-control">
+          <label for="text">Turma</label>
+          <input autofocus type="text" id="turma" placeholder="Turma do aluno" />
+        </div>
+
+        <div class="form-control">
+          <label for="copies">Quantidade de cópias <br /></label><br>
+          <small>Por hora, se não for pago no ato, adicionar quantidade negativa</small>
+          <input type="number" id="copies" onchange="calculatePrice()" placeholder="Quantidade de cópias" />
+        </div>
+
+        <div class="form-control">
+          <label for="text">Data</label>
+          <input type="date" id="data" placeholder="Data" />
+        </div>
+
+        <div class="form-control">
+          <label for="payment">Foi pago?</label>
+          <select type="select" id="payment">
+            <option value="Sim">Sim</option>
+            <option value="Não">Não</option>
+          </select>
+        </div>
+
+        <div class="form-control">
+          <h3>Valor Total<br /></h3>
+          R$ <label id="value">0.00</label>
+        </div>
+
+        <button class="btn">Adicionar</button>
+      </form>
+    </div>
+
+    <script src="functions.js"></script>
+  </body>
+</html>
