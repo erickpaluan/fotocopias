@@ -142,7 +142,7 @@ const handleFormSubmit = event => {
     const transactionCourse = curso.value.trim()
     const transactionClass = turma.value.trim()
     const transactionCopies = copias.value.trim()
-    const transactionData = data.value
+    const transactionData = new Date(data.value).toLocaleDateString()
     const transactionPay = pago.value.trim()
     const transactionValue = valorTotalCopias.innerHTML
     const isSomeInputEmpty = transactionName === '' || transactionCourse === '' || transactionClass === '' || transactionCopies === '' || transactionData === ''
